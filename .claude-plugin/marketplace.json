@@ -1,0 +1,27 @@
+{
+  "name": "flywheel",
+  "owner": {
+    "name": "FlyWheel Agents",
+    "email": "ben@benbowler.com",
+    "url": "https://flywheelagents.com"
+  },
+  "metadata": {
+    "description": "Official FlyWheel Agents marketplace. One plugin: a full marketing team for Claude Code, backed by the audited FlyWheel ad-ops connector.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "flywheel",
+      "source": "./",
+      "description": "Marketing agents, guided onboarding, campaign workflows, and the FlyWheel MCP connector (Reddit, Google Ads, Meta) in one install.",
+      "version": "0.1.0",
+      "author": { "name": "FlyWheel Agents" },
+      "homepage": "https://flywheelagents.com",
+      "repository": "https://github.com/FlyWheelAgents/flywheel-marketing-plugin",
+      "license": "MIT",
+      "category": "marketing",
+      "tags": ["marketing", "ads", "seo", "branding", "campaigns", "mcp"],
+      "strict": false
+    }
+  ]
+}

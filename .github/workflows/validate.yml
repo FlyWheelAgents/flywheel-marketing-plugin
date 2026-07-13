@@ -1,0 +1,26 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate skills and agents
+        run: bash scripts/validate-skills.sh
+
+      - name: Validate JSON manifests
+        run: |
+          python3 -m json.tool .claude-plugin/plugin.json > /dev/null
+          python3 -m json.tool .claude-plugin/marketplace.json > /dev/null
+          python3 -m json.tool .mcp.json > /dev/null
+
+      - name: Validate plugin (claude CLI)
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate .

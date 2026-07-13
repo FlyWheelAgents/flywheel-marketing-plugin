@@ -1,0 +1,25 @@
+{
+  "name": "flywheel",
+  "displayName": "FlyWheel Marketing",
+  "version": "0.1.0",
+  "description": "A marketing team for your agent: onboarding workflows, brand and campaign skills, eight marketing agents, and the audited FlyWheel ad-ops MCP connector for Reddit, Google Ads, and Meta.",
+  "author": {
+    "name": "FlyWheel Agents",
+    "email": "ben@benbowler.com",
+    "url": "https://flywheelagents.com"
+  },
+  "homepage": "https://flywheelagents.com",
+  "repository": "https://github.com/FlyWheelAgents/flywheel-marketing-plugin",
+  "license": "MIT",
+  "keywords": [
+    "marketing",
+    "ads",
+    "seo",
+    "branding",
+    "campaigns",
+    "mcp",
+    "google-ads",
+    "meta-ads",
+    "reddit-ads"
+  ]
+}
