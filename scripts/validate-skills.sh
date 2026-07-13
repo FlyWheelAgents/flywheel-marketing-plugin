@@ -40,6 +40,7 @@ fi
 # --- MCP tool-name references must exist on the live connector ---
 # Keep in sync with the connector's tool registry.
 known_tools="getting_started connections_list connect_service connection_revoke audit_query \
+intro_call_slots book_intro_call \
 assets_list asset_upload_begin asset_upload_commit \
 reddit_ad_accounts_list reddit_ad_account_funding reddit_campaigns_list reddit_ad_groups_list \
 reddit_ads_list reddit_stats reddit_creative_status reddit_campaign_create reddit_campaign_update \

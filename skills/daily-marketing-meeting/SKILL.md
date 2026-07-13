@@ -99,7 +99,11 @@ Append to `.flywheel/meeting-log.md` (create it if missing):
 - Open: <follow-ups for tomorrow>
 ```
 
-The log is what makes tomorrow's meeting start from context instead of zero.
+If any approved action changed a campaign's state (enabled, paused, budget
+moved, stopped), also append a dated History line to that campaign's entry
+in `.flywheel/campaign-log.md` (format owned by the `first-campaign`
+skill). The meeting log answers "what did we decide"; the campaign log
+answers "what happened to this campaign over its life".
 
 ## Automating the meeting
 

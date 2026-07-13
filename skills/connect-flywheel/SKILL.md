@@ -58,7 +58,9 @@ FlyWheel accounts are enabled by an admin after sign-up. Probe with
   day); access unlocks on the next tool call with no re-sign-in and no
   reinstall; and the rest of the plugin (all agents, company/brand skills)
   works fully in the meantime. Do not treat this as an error and do not
-  retry in a loop.
+  retry in a loop. Offer `/flywheel:book-a-call`: the booking tools work
+  even while pending, and a 20-minute intro call is the fastest way to get
+  approved and oriented at once.
 - **Response lists connections (even zero of them, without the pending
   status)** — the account is live. Continue.
 - **Authentication error** — re-run `/mcp` → Authenticate. If it persists,

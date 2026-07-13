@@ -23,8 +23,8 @@ existing file.
 Check, in order:
 
 1. Walk up from the current directory looking for a `.flywheel/` directory.
-   Note which of these exist: `product-context.md`, `brand-voice.md`,
-   `brand-visual.md`, `meeting-log.md`.
+   Note which of these exist: `product-context.md`, `personas.md`,
+   `brand-voice.md`, `brand-visual.md`, `campaign-log.md`, `meeting-log.md`.
 2. Check whether FlyWheel MCP tools are available in this session (tool names
    containing `connections_list`, `getting_started`).
 3. If the current directory is the user's home directory, warn that context
@@ -40,6 +40,11 @@ If `.flywheel/product-context.md` exists, summarize it in two lines and ask
 whether it's still current; update only the sections the user wants changed.
 Otherwise run the `define-company` skill flow: interview the user and write
 `.flywheel/product-context.md` from `templates/product-context.md`.
+
+Then offer personas (don't force it): the `define-personas` skill turns the
+audience summary into 1-3 targeting-grade personas in
+`.flywheel/personas.md`. Worth doing before any money moves; skippable if
+the user wants to get to setup first.
 
 ## Step 2 — Define the brand
 
@@ -67,13 +72,18 @@ skip this step and step 4, and say what they'd gain by connecting later.
 
 ## Step 4 — First campaign
 
-Run the `first-campaign` skill flow: connect an ad platform account, then
-build a first campaign following FlyWheel's launch runbook (fetched live from
-the connector's `getting_started` tool). Everything ships paused; nothing
-spends without an explicit, separate confirmation.
+Run the `first-campaign` skill flow: connect an ad platform account (via
+the `connect-platforms` flow), then build a first campaign following
+FlyWheel's launch runbook (fetched live from the connector's
+`getting_started` tool), recorded in `.flywheel/campaign-log.md`.
+Everything ships paused; nothing spends without an explicit, separate
+confirmation.
 
 ## Wrap up
 
 Summarize: what was created (file paths), connector state, and what to try
-next. Suggest `/flywheel:daily-marketing-meeting` as the recurring habit, and
-name two agents relevant to the user's stated 90-day goal.
+next. Suggest `/flywheel:daily-marketing-meeting` as the recurring habit,
+and name two agents relevant to the user's stated 90-day goal. If anything
+in setup felt stuck — approval wait, connection trouble, or just wanting a
+human read on the plan — offer `/flywheel:book-a-call` (a 20-minute slot
+with the team, bookable from chat even while approval is pending).

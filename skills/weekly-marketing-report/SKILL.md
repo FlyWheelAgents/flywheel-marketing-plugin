@@ -28,7 +28,10 @@ for "insight": week-over-week direction, not day-to-day noise.
    when.
 4. `.flywheel/meeting-log.md`: the week's decisions, so the report reflects
    what was tried, not just what happened.
-5. `.flywheel/product-context.md`: goal and monthly budget for pacing.
+5. `.flywheel/campaign-log.md`: the campaign roster and each one's History
+   lines — the "what we did" section should reconcile with it, and any
+   campaign that changed state without a log entry gets flagged.
+6. `.flywheel/product-context.md`: goal and monthly budget for pacing.
 
 ## Write
 

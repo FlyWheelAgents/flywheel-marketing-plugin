@@ -41,26 +41,17 @@ two platforms on day one; there's no baseline to compare against yet.
 
 ## Step 3 — Connect the platform account
 
-1. Call `connect_service` with the chosen service (`"reddit"`,
-   `"google_ads"`, or `"meta"`).
-2. Give the user the returned URL: it works pasted into any browser on any
-   device, no prior dashboard session needed, and expires in about 10
-   minutes. If it expires or the user abandons the platform's consent
-   screen, just call `connect_service` again for a fresh URL.
-3. Poll `connections_list` until the connection appears, then relay what
-   came back: currency, time zone, and any platform flags (for Meta,
-   `has_funding`; a manager account; Pages count).
+Run the `connect-platforms` skill flow for the chosen platform (it owns
+connection and the funding reality check). Come back here once
+`connections_list` shows the account.
 
-## Step 4 — Money check before anything is built
+## Step 4 — Money units before anything is built
 
-Campaigns that can't spend don't serve; catch this now, not after review:
-
-- **Reddit:** confirm funding with the funding tool named in the runbook.
-- **Google:** note the account's currency and that all Google money values
-  are micros (1,000,000 = one unit of that currency).
-- **Meta:** money is in minor units (cents), and `has_funding: false` often
-  means the API can't see a credit line rather than that none exists — have
-  the user verify billing in Ads Manager instead of assuming.
+- **Google:** all money values are micros (1,000,000 = one unit of the
+  account currency).
+- **Meta:** money is in minor units (cents; whole units for JPY/KRW).
+- **Reddit:** funding was checked during connect; if that was a while ago,
+  re-check before building.
 
 ## Step 5 — Build, paused
 
@@ -74,16 +65,36 @@ say so.
 If the user wants creative input, involve the `copywriter` (platform
 character limits) and run the result past `brand-guardian` before uploading.
 
-## Step 6 — The receipts
+## Step 6 — The receipts and the log
 
 Call `audit_query` and show the trail of what was just done: every call,
 args, status, latency. This is the habit that matters later: when anyone
 asks "what did the agent do to our ad account", this is the answer.
 
+Then record the campaign in **`.flywheel/campaign-log.md`** (create it if
+missing). This file is the canonical format — other skills append entries
+in the same shape:
+
+```
+## <campaign name> — <platform>
+- Created: <date> · status: paused
+- Ids: campaign <id> · group/set <id> · ad <id>
+- Objective: <from the brief, or one line>
+- Budget: <daily, currency> · stop date: <date or "none set — fix this">
+- Brief: .flywheel/briefs/<slug>.md (if one exists)
+- History:
+  - <date>: created (paused)
+```
+
+Every later state change (enabled, budget change, stopped) appends a dated
+History line. The audit trail records what tools did; this log records
+which campaigns exist and why.
+
 ## Step 7 — Going live (separate decision)
 
 Enabling the campaign is its own conversation. Restate the daily budget and
 the first review checkpoint (48-72h; nothing meaningful sooner), get an
-explicit yes, then enable via the platform's update tool. Log the decision
-in `.flywheel/meeting-log.md` if it exists, and point the user at
+explicit yes, then enable via the platform's update tool. Append the
+History line to `.flywheel/campaign-log.md`, log the decision in
+`.flywheel/meeting-log.md` if it exists, and point the user at
 `/flywheel:daily-marketing-meeting` for the follow-up rhythm.

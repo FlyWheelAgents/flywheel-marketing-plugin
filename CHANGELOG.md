@@ -1,6 +1,23 @@
 # Changelog
 
-## 0.1.0 — unreleased
+## 0.2.0 — 2026-07-13
+
+- New agent: geo-specialist (AI answer-engine visibility — GEO/AEO, LLM
+  citations, llms.txt, entity hygiene). Nine agents total.
+- New skills: define-personas (`.flywheel/personas.md`), connect-platforms
+  (link ad accounts without building a campaign), book-a-call (books a
+  20-minute intro call from chat via the connector's new intro_call_slots +
+  book_intro_call tools; works while approval is pending; URL fallback).
+- Campaign log: `.flywheel/campaign-log.md` records every campaign's life
+  (planned → created paused → enabled → changes), written by campaign-brief,
+  first-campaign, and daily-marketing-meeting; reconciled by the weekly
+  report.
+- channel-strategist: bid/budget/CPC optimization section and trigger
+  phrases; GEO trigger phrases rerouted from seo-specialist to
+  geo-specialist.
+- first-campaign now delegates platform connection to connect-platforms.
+
+## 0.1.0 — 2026-07-13
 
 Initial release.
 

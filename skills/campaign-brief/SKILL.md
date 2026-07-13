@@ -68,7 +68,11 @@ First review: <48-72h after launch>
 
 ## Hand-off
 
-Offer the next steps in order: `copywriter` for the creative blocks,
+Add a planned entry to `.flywheel/campaign-log.md` (format owned by the
+`first-campaign` skill) with status `planned` and a link to the brief, so
+the pipeline is visible before anything is built.
+
+Then offer the next steps in order: `copywriter` for the creative blocks,
 `brand-guardian` for review, `campaign-designer` (or `first-campaign` if
 this is the first one) to build it — paused — through the FlyWheel
 connector.

@@ -1,8 +1,8 @@
 {
   "name": "flywheel",
   "displayName": "FlyWheel Marketing",
-  "version": "0.1.0",
-  "description": "A marketing team for your agent: onboarding workflows, brand and campaign skills, eight marketing agents, and the audited FlyWheel ad-ops MCP connector for Reddit, Google Ads, and Meta.",
+  "version": "0.2.0",
+  "description": "A marketing team for your agent: onboarding workflows, brand and campaign skills, nine marketing agents, and the audited FlyWheel ad-ops MCP connector for Reddit, Google Ads, and Meta.",
   "author": {
     "name": "FlyWheel Agents",
     "email": "ben@benbowler.com",

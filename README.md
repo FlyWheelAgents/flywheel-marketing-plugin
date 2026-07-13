@@ -1,6 +1,6 @@
 # FlyWheel Marketing Plugin
 
-A marketing team for your agent. One Claude Code plugin bundles eight
+A marketing team for your agent. One Claude Code plugin bundles nine
 marketing agents, guided onboarding, campaign workflows, and the FlyWheel
 connector — audited read/write access to Reddit Ads, Google Ads, and Meta,
 with every action logged.
@@ -58,7 +58,8 @@ connections are untouched — they live server-side.
 | `growth-analyst` | Performance readouts, anomaly triage, "what did the agent change and when" |
 | `brand-guardian` | Reviews any outward-facing artifact against your brand guidelines |
 | `copywriter` | Headlines, landing pages, ads within platform limits, emails — three variants each |
-| `seo-specialist` | Intent mapping, on-page fundamentals, content briefs, AI-answer-engine reality |
+| `seo-specialist` | Intent mapping, on-page fundamentals, content briefs |
+| `geo-specialist` | Getting cited by AI answer engines — ChatGPT, Perplexity, AI Overviews |
 | `content-marketer` | Pillar/cluster strategy, sustainable calendars, channel-native repurposing |
 
 Every agent reads your `.flywheel/` context files first (created by
@@ -71,9 +72,12 @@ reminded.
 |---|---|
 | `/flywheel:get-started` | Guided setup: company → brand → connector → first campaign |
 | `/flywheel:define-company` | Interview → `.flywheel/product-context.md` |
+| `/flywheel:define-personas` | Interview → `.flywheel/personas.md` (1-3 targeting-grade personas) |
 | `/flywheel:define-brand` | Interview → `.flywheel/brand-voice.md` + `brand-visual.md` |
 | `/flywheel:connect-flywheel` | Connector sign-in, duplicate cleanup, approval-state handling |
-| `/flywheel:first-campaign` | Platform connect → build first campaign, paused, with receipts |
+| `/flywheel:connect-platforms` | Link Reddit/Google/Meta ad accounts — no campaign required |
+| `/flywheel:first-campaign` | Build the first campaign, paused, with receipts and a campaign log |
+| `/flywheel:book-a-call` | Book a 20-minute call with the team, from chat (works while pending) |
 | `/flywheel:daily-marketing-meeting` | Standup: yesterday's numbers, one win, one concern, proposed actions |
 | `/flywheel:weekly-marketing-report` | Stakeholder-ready week in review with budget pacing |
 | `/flywheel:campaign-brief` | One-page brief before any money moves |
@@ -90,9 +94,10 @@ args, status, latency, and actor.
 
 | | Without FlyWheel | With FlyWheel |
 |---|---|---|
-| All eight agents | Full (strategy, content, review) | Plus live data and campaign actions |
-| get-started steps 1-2, define-company, define-brand, campaign-brief | Full | Full |
-| get-started steps 3-4, connect-flywheel, first-campaign | — | Full |
+| All nine agents | Full (strategy, content, review) | Plus live data and campaign actions |
+| get-started steps 1-2, define-company, define-personas, define-brand, campaign-brief | Full | Full |
+| get-started steps 3-4, connect-flywheel, connect-platforms, first-campaign | — | Full |
+| book-a-call | Booking page URL | Books from chat (even while pending approval) |
 | daily-marketing-meeting, weekly-marketing-report | Planning mode (no live numbers) | Full |
 
 ## Automate the daily meeting
